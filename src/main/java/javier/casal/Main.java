@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         // 1
-        Producto producto1 = new Producto("Ordenador", 10, 999.99);
+        ProductoTransient producto1 = new ProductoTransient("Ordenador", 10, 999.99);
         //Producto producto2 = new Producto("Teclado",28,12.99);
         //CASAL
 
@@ -34,14 +34,14 @@ public class Main {
 
 
         // 3
-        Producto producto2 = new Producto();
+        ProductoTransient producto2 = new ProductoTransient();
 
         try {
 
             FileInputStream fichero = new FileInputStream("src/main/java/javier/casal/serial.txt");
             ObjectInputStream objeto = new ObjectInputStream(fichero);
 
-            producto2 = (Producto) objeto.readObject();
+            producto2 = (ProductoTransient) objeto.readObject();
 
             objeto.close();
             fichero.close();
